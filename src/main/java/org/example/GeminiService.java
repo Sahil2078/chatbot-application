@@ -6,8 +6,8 @@ import java.util.*;
 
 @Service
 public class GeminiService {
-    // PRO TIP: In a real app, move this to application.properties
-    private final String API_KEY = "AIzaSyACyYB-XJib0ceBfpZb3ihT6o1NRDWraBg";
+    // Correct way: The app asks Render for the key at runtime
+    private final String API_KEY = System.getenv("GEMINI_API_KEY");
 
     // ✅ FIXED: Updated from deprecated gemini-1.5-flash to gemini-2.5-flash
     private final String URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=" + API_KEY;
